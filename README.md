@@ -1,5 +1,7 @@
 # compaction-check
 
+![compaction-check — Preserve constraints through compaction. A diagram shows three highlighted constraints remaining intact as context is condensed.](docs/assets/readme-banner.png)
+
 **Developer alpha · v0.2.0a1 · MIT license**
 
 [Releases](https://github.com/pratik-mahalle/compaction-check/releases) · [Alpha feedback](https://github.com/pratik-mahalle/compaction-check/issues/new?template=alpha-feedback.yml) · [Changelog](CHANGELOG.md)
