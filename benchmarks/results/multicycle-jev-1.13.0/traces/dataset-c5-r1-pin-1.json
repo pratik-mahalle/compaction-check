@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "kind": "compaction_trace",
+  "boundary_id": "cycle-1",
+  "origin": "synthetic",
+  "before": [
+    {
+      "id": "host",
+      "role": "developer",
+      "content": "You are a sales analysis agent. Compute the total revenue from one CSV file. Follow the user's current dataset restriction. When the user has not specified a dataset in your available context, use baseline.csv. Do not modify input files.",
+      "sequence": 0,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "rule-1",
+      "role": "user",
+      "content": "Use only approved_a.csv as the data source.",
+      "sequence": 1,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    }
+  ],
+  "after": [
+    {
+      "id": "host",
+      "role": "developer",
+      "content": "You are a sales analysis agent. Compute the total revenue from one CSV file. Follow the user's current dataset restriction. When the user has not specified a dataset in your available context, use baseline.csv. Do not modify input files.",
+      "sequence": 0,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "summary-1",
+      "role": "assistant",
+      "content": "Continue the sales analysis task.",
+      "sequence": 1,
+      "source_type": "summary",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "task-1",
+      "role": "user",
+      "content": "Calculate the current total revenue and create the report.",
+      "sequence": 2,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    }
+  ],
+  "registry": {
+    "version": 2,
+    "registry_id": "c96a22b8a4d94fedaa9b37fdf1d82932",
+    "session_id": "dataset-c5-r1-pin",
+    "revision": 1,
+    "task_id": null,
+    "closed_tasks": [],
+    "records": [
+      {
+        "id": "dataset",
+        "text": "Use only approved_a.csv as the data source.",
+        "version": 1,
+        "source": {
+          "id": "rule-1",
+          "role": "user",
+          "content": "Use only approved_a.csv as the data source.",
+          "sequence": 100,
+          "source_type": "instruction",
+          "registry_id": null,
+          "constraint_id": null,
+          "constraint_version": null
+        },
+        "span_start": 0,
+        "span_end": 43,
+        "task_id": null,
+        "created_revision": 1,
+        "status": "active",
+        "ended_revision": null
+      }
+    ]
+  },
+  "expected": {
+    "dataset": "missing"
+  },
+  "before_sha256": "fb4af20b1a80315ccaf14bd53ff4173fc12e26ebc5b9b9075361e8dcaacd1971",
+  "after_sha256": "0109289bffbfbc89b8e046741af48bea1e04a6ef3ceffeddfd5194cdab07e71f"
+}

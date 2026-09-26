@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "kind": "compaction_trace",
+  "boundary_id": "cycle-5",
+  "origin": "synthetic",
+  "before": [
+    {
+      "id": "host",
+      "role": "developer",
+      "content": "You are a sales analysis agent. Compute the total revenue from one CSV file. Follow the user's current dataset restriction. When the user has not specified a dataset in your available context, use baseline.csv. Do not modify input files.",
+      "sequence": 0,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "summary-4",
+      "role": "assistant",
+      "content": "Continue the sales analysis task.",
+      "sequence": 1,
+      "source_type": "summary",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "task-4",
+      "role": "user",
+      "content": "Calculate the current total revenue and create the report.",
+      "sequence": 2,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "result-4",
+      "role": "tool",
+      "content": "Read baseline.csv; total revenue is 1000.",
+      "sequence": 3,
+      "source_type": "tool_result",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "rule-5",
+      "role": "user",
+      "content": "Use only approved_a.csv as the data source.",
+      "sequence": 4,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    }
+  ],
+  "after": [
+    {
+      "id": "host",
+      "role": "developer",
+      "content": "You are a sales analysis agent. Compute the total revenue from one CSV file. Follow the user's current dataset restriction. When the user has not specified a dataset in your available context, use baseline.csv. Do not modify input files.",
+      "sequence": 0,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "summary-5",
+      "role": "assistant",
+      "content": "Continue the sales analysis task.",
+      "sequence": 1,
+      "source_type": "summary",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "task-5",
+      "role": "user",
+      "content": "Calculate the current total revenue and create the report.",
+      "sequence": 2,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    }
+  ],
+  "registry": {
+    "version": 2,
+    "registry_id": "fd0259c00f3e49e38341c2d913d5f6a4",
+    "session_id": "dataset-c5-r1-unprotected",
+    "revision": 5,
+    "task_id": null,
+    "closed_tasks": [],
+    "records": [
+      {
+        "id": "dataset",
+        "text": "Use only approved_a.csv as the data source.",
+        "version": 1,
+        "source": {
+          "id": "rule-1",
+          "role": "user",
+          "content": "Use only approved_a.csv as the data source.",
+          "sequence": 100,
+          "source_type": "instruction",
+          "registry_id": null,
+          "constraint_id": null,
+          "constraint_version": null
+        },
+        "span_start": 0,
+        "span_end": 43,
+        "task_id": null,
+        "created_revision": 1,
+        "status": "superseded",
+        "ended_revision": 2
+      },
+      {
+        "id": "dataset",
+        "text": "Use only approved_b.csv as the data source.",
+        "version": 2,
+        "source": {
+          "id": "rule-2",
+          "role": "user",
+          "content": "Use only approved_b.csv as the data source.",
+          "sequence": 200,
+          "source_type": "instruction",
+          "registry_id": null,
+          "constraint_id": null,
+          "constraint_version": null
+        },
+        "span_start": 0,
+        "span_end": 43,
+        "task_id": null,
+        "created_revision": 2,
+        "status": "superseded",
+        "ended_revision": 3
+      },
+      {
+        "id": "dataset",
+        "text": "Use only approved_a.csv as the data source.",
+        "version": 3,
+        "source": {
+          "id": "rule-3",
+          "role": "user",
+          "content": "Use only approved_a.csv as the data source.",
+          "sequence": 300,
+          "source_type": "instruction",
+          "registry_id": null,
+          "constraint_id": null,
+          "constraint_version": null
+        },
+        "span_start": 0,
+        "span_end": 43,
+        "task_id": null,
+        "created_revision": 3,
+        "status": "superseded",
+        "ended_revision": 4
+      },
+      {
+        "id": "dataset",
+        "text": "Use only approved_b.csv as the data source.",
+        "version": 4,
+        "source": {
+          "id": "rule-4",
+          "role": "user",
+          "content": "Use only approved_b.csv as the data source.",
+          "sequence": 400,
+          "source_type": "instruction",
+          "registry_id": null,
+          "constraint_id": null,
+          "constraint_version": null
+        },
+        "span_start": 0,
+        "span_end": 43,
+        "task_id": null,
+        "created_revision": 4,
+        "status": "superseded",
+        "ended_revision": 5
+      },
+      {
+        "id": "dataset",
+        "text": "Use only approved_a.csv as the data source.",
+        "version": 5,
+        "source": {
+          "id": "rule-5",
+          "role": "user",
+          "content": "Use only approved_a.csv as the data source.",
+          "sequence": 500,
+          "source_type": "instruction",
+          "registry_id": null,
+          "constraint_id": null,
+          "constraint_version": null
+        },
+        "span_start": 0,
+        "span_end": 43,
+        "task_id": null,
+        "created_revision": 5,
+        "status": "active",
+        "ended_revision": null
+      }
+    ]
+  },
+  "expected": {
+    "dataset": "missing"
+  },
+  "before_sha256": "41c988688ab8c9a05ddb16cc7059bf9098619998e2bbc4e1e307b730798b495e",
+  "after_sha256": "cc7775bebbf7f65e74af8525f8419831bf0a5b1391b7de836d46ed557f3825ce"
+}

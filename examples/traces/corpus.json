@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "sessions": 1,
+  "boundaries": 2,
+  "observed_boundaries": 0,
+  "entries": [
+    {
+      "session_id": "synthetic-sales-example",
+      "boundary_id": "good",
+      "origin": "synthetic",
+      "split": "development",
+      "before_sha256": "7a1350cf3524b2bdbc4271c8854e08e0658c09d9f70e8e0e5ff54ae3b8356947",
+      "after_sha256": "0444e6868198dd06cdf7ef882619d9f164e45d4e60cf2bb297419f8fcfd98934"
+    },
+    {
+      "session_id": "synthetic-sales-example",
+      "boundary_id": "bad",
+      "origin": "synthetic",
+      "split": "development",
+      "before_sha256": "7a1350cf3524b2bdbc4271c8854e08e0658c09d9f70e8e0e5ff54ae3b8356947",
+      "after_sha256": "6dc413a4cf728ea17cc176d48343628350d7b88e68b6347fb9883899a7fb70e3"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+name: Release alpha
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  checks:
+    uses: ./.github/workflows/test.yml
+
+  publish:
+    needs: checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    env:
+      TAG_NAME: ${{ github.ref_name }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.11'
+      - run: python -m pip install build twine
+      - run: python -m build --outdir release-dist
+      - run: python -m twine check release-dist/*
+      - run: python scripts/release_artifacts.py --tag "$TAG_NAME" --directory release-dist
+      - name: Publish developer prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$TAG_NAME" release-dist/*.whl release-dist/*.tar.gz release-dist/SHA256SUMS \
+            --verify-tag --prerelease --latest=false \
+            --title "compaction-check $TAG_NAME — developer alpha" \
+            --notes-file "docs/releases/$TAG_NAME.md"

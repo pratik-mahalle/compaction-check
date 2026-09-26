@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "policy_version": "retention-v1",
+  "created_at": "2026-09-26T12:56:42.851600+00:00",
+  "complete": true,
+  "passed": false,
+  "exit_code": 1,
+  "scope": "constraint_retention",
+  "judge": "jev",
+  "requested_model": "jev-1.13.0",
+  "resolved_models": [
+    "jev-1.13.0"
+  ],
+  "min_confidence": 0.6,
+  "context_sha256": "3f745176fe93879fd3cb4e3855e74302544a0d22dcbcb394568063a644ae9365",
+  "constraints_sha256": "8ced67251e470d9efb8f2c843b8e1209fd0d3f54edb361cf110bd0e7ed08f91b",
+  "summary": {
+    "active": 3,
+    "preserved": 0,
+    "missing": 1,
+    "weakened": 1,
+    "contradicted": 1,
+    "uncertain": 0,
+    "skipped": 1
+  },
+  "results": [
+    {
+      "id": "dataset",
+      "constraint": "Use only sales_2025.csv as the data source.",
+      "source": "user turn 1",
+      "active": true,
+      "evidence": null,
+      "confidence": 1.0,
+      "probabilities": {
+        "weakened": 0.0,
+        "uncertain": 0.0,
+        "missing": 1.0,
+        "preserved": 0.0,
+        "contradicted": 0.0
+      },
+      "raw_status": "missing",
+      "evidence_confidence": 0.86,
+      "status": "missing",
+      "reason": "Jev found no operative version of this requirement in the supplied context."
+    },
+    {
+      "id": "approval",
+      "constraint": "Ask the user for approval before deleting any file.",
+      "source": "user turn 2",
+      "active": true,
+      "evidence": {
+        "id": "p3",
+        "start_line": 3,
+        "end_line": 3,
+        "text": "Be careful when deleting files; ask for approval if convenient.\n"
+      },
+      "confidence": 0.99,
+      "probabilities": {
+        "uncertain": 0.0,
+        "contradicted": 0.0,
+        "missing": 0.0,
+        "preserved": 0.01,
+        "weakened": 0.99
+      },
+      "raw_status": "weakened",
+      "evidence_confidence": 1.0,
+      "status": "weakened",
+      "reason": "Jev judged that the retained rule relaxes part of the original requirement."
+    },
+    {
+      "id": "language",
+      "constraint": "Write the final report in Spanish.",
+      "source": "user turn 5",
+      "active": true,
+      "evidence": {
+        "id": "p4",
+        "start_line": 4,
+        "end_line": 4,
+        "text": "Deliver the final report in English.\n"
+      },
+      "confidence": 0.98,
+      "probabilities": {
+        "missing": 0.02,
+        "weakened": 0.0,
+        "preserved": 0.0,
+        "uncertain": 0.0,
+        "contradicted": 0.98
+      },
+      "raw_status": "contradicted",
+      "evidence_confidence": 1.0,
+      "status": "contradicted",
+      "reason": "Jev found an operative instruction incompatible with this requirement."
+    },
+    {
+      "id": "old-language",
+      "constraint": "Write the final report in English.",
+      "source": "user turn 1; replaced at turn 5",
+      "active": false,
+      "evidence": null,
+      "confidence": null,
+      "probabilities": null,
+      "raw_status": null,
+      "evidence_confidence": null,
+      "status": "skipped",
+      "reason": "Explicitly inactive; excluded from retention checks."
+    }
+  ],
+  "calls": [
+    {
+      "constraint_id": "dataset",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1202,
+        "output_tokens": 124
+      }
+    },
+    {
+      "constraint_id": "approval",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1194,
+        "output_tokens": 127
+      }
+    },
+    {
+      "constraint_id": "language",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1188,
+        "output_tokens": 128
+      }
+    }
+  ]
+}

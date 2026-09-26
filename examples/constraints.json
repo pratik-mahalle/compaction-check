@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "constraints": [
+    {"id": "dataset", "text": "Use only sales_2025.csv as the data source.", "source": "user turn 1"},
+    {"id": "approval", "text": "Ask the user for approval before deleting any file.", "source": "user turn 2"},
+    {"id": "language", "text": "Write the final report in Spanish.", "source": "user turn 5"},
+    {"id": "old-language", "text": "Write the final report in English.", "active": false, "source": "user turn 1; replaced at turn 5"}
+  ]
+}

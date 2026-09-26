@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "kind": "compaction_trace",
+  "boundary_id": "cycle-2",
+  "origin": "synthetic",
+  "before": [
+    {
+      "id": "host",
+      "role": "developer",
+      "content": "You are a sales analysis agent. Compute the total revenue from one CSV file. Follow the user's current dataset restriction. When the user has not specified a dataset in your available context, use baseline.csv. Do not modify input files.",
+      "sequence": 0,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "summary-1",
+      "role": "assistant",
+      "content": "Continue the sales analysis task.",
+      "sequence": 1,
+      "source_type": "summary",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "task-1",
+      "role": "user",
+      "content": "Calculate the current total revenue and create the report.",
+      "sequence": 2,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "cc:7e56a71338554f4ca5f6230a08dd6b46:dataset",
+      "role": "user",
+      "content": "Use only approved_a.csv as the data source.",
+      "sequence": 3,
+      "source_type": "restored_constraint",
+      "registry_id": "7e56a71338554f4ca5f6230a08dd6b46",
+      "constraint_id": "dataset",
+      "constraint_version": 1
+    },
+    {
+      "id": "result-1",
+      "role": "tool",
+      "content": "Read approved_a.csv; total revenue is 40.",
+      "sequence": 4,
+      "source_type": "tool_result",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "rule-2",
+      "role": "user",
+      "content": "Use only approved_b.csv as the data source.",
+      "sequence": 5,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    }
+  ],
+  "after": [
+    {
+      "id": "host",
+      "role": "developer",
+      "content": "You are a sales analysis agent. Compute the total revenue from one CSV file. Follow the user's current dataset restriction. When the user has not specified a dataset in your available context, use baseline.csv. Do not modify input files.",
+      "sequence": 0,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "cc:7e56a71338554f4ca5f6230a08dd6b46:dataset",
+      "role": "user",
+      "content": "Use only approved_a.csv as the data source.",
+      "sequence": 1,
+      "source_type": "restored_constraint",
+      "registry_id": "7e56a71338554f4ca5f6230a08dd6b46",
+      "constraint_id": "dataset",
+      "constraint_version": 1
+    },
+    {
+      "id": "summary-2",
+      "role": "assistant",
+      "content": "Continue the sales analysis task.",
+      "sequence": 2,
+      "source_type": "summary",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "task-2",
+      "role": "user",
+      "content": "Calculate the current total revenue and create the report.",
+      "sequence": 3,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    }
+  ],
+  "registry": {
+    "version": 2,
+    "registry_id": "7e56a71338554f4ca5f6230a08dd6b46",
+    "session_id": "dataset-c3-r2-repair",
+    "revision": 2,
+    "task_id": null,
+    "closed_tasks": [],
+    "records": [
+      {
+        "id": "dataset",
+        "text": "Use only approved_a.csv as the data source.",
+        "version": 1,
+        "source": {
+          "id": "rule-1",
+          "role": "user",
+          "content": "Use only approved_a.csv as the data source.",
+          "sequence": 100,
+          "source_type": "instruction",
+          "registry_id": null,
+          "constraint_id": null,
+          "constraint_version": null
+        },
+        "span_start": 0,
+        "span_end": 43,
+        "task_id": null,
+        "created_revision": 1,
+        "status": "superseded",
+        "ended_revision": 2
+      },
+      {
+        "id": "dataset",
+        "text": "Use only approved_b.csv as the data source.",
+        "version": 2,
+        "source": {
+          "id": "rule-2",
+          "role": "user",
+          "content": "Use only approved_b.csv as the data source.",
+          "sequence": 200,
+          "source_type": "instruction",
+          "registry_id": null,
+          "constraint_id": null,
+          "constraint_version": null
+        },
+        "span_start": 0,
+        "span_end": 43,
+        "task_id": null,
+        "created_revision": 2,
+        "status": "active",
+        "ended_revision": null
+      }
+    ]
+  },
+  "expected": {
+    "dataset": "contradicted"
+  },
+  "before_sha256": "ea350bc345e5f918d778c65463de82774f72ef33fd99714cf3986fb4d19ae4dc",
+  "after_sha256": "322712829bcb4b7dae640214c162ba6b8b8bea58a54cc47dafd3934239248dfa"
+}

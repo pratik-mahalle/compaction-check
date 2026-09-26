@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "kind": "compaction_trace",
+  "boundary_id": "bad",
+  "origin": "synthetic",
+  "before": [
+    {
+      "id": "user-1",
+      "role": "user",
+      "content": "Use only sales_2025.csv as the data source.",
+      "sequence": 1,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "user-2",
+      "role": "user",
+      "content": "Ask the user for approval before deleting any file.",
+      "sequence": 2,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "user-3",
+      "role": "user",
+      "content": "Write the final report in English.",
+      "sequence": 3,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    },
+    {
+      "id": "user-5",
+      "role": "user",
+      "content": "Write the final report in Spanish.",
+      "sequence": 5,
+      "source_type": "instruction",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    }
+  ],
+  "after": [
+    {
+      "id": "summary-bad",
+      "role": "assistant",
+      "content": "# Sales report task\nAnalyze sales data and calculate monthly totals.\nBe careful when deleting files; ask for approval if convenient.\nDeliver the final report in English.\nNext step: explain the sales trend.\n",
+      "sequence": 0,
+      "source_type": "summary",
+      "registry_id": null,
+      "constraint_id": null,
+      "constraint_version": null
+    }
+  ],
+  "registry": {
+    "version": 2,
+    "registry_id": "5f4eecb572d54a9eaed70690e8c99ccc",
+    "session_id": "synthetic-sales-example",
+    "revision": 4,
+    "task_id": null,
+    "closed_tasks": [],
+    "records": [
+      {
+        "id": "dataset",
+        "text": "Use only sales_2025.csv as the data source.",
+        "version": 1,
+        "source": {
+          "id": "user-1",
+          "role": "user",
+          "content": "Use only sales_2025.csv as the data source.",
+          "sequence": 1,
+          "source_type": "instruction",
+          "registry_id": null,
+          "constraint_id": null,
+          "constraint_version": null
+        },
+        "span_start": 0,
+        "span_end": 43,
+        "task_id": null,
+        "created_revision": 1,
+        "status": "active",
+        "ended_revision": null
+      },
+      {
+        "id": "approval",
+        "text": "Ask the user for approval before deleting any file.",
+        "version": 1,
+        "source": {
+          "id": "user-2",
+          "role": "user",
+          "content": "Ask the user for approval before deleting any file.",
+          "sequence": 2,
+          "source_type": "instruction",
+          "registry_id": null,
+          "constraint_id": null,
+          "constraint_version": null
+        },
+        "span_start": 0,
+        "span_end": 51,
+        "task_id": null,
+        "created_revision": 2,
+        "status": "active",
+        "ended_revision": null
+      },
+      {
+        "id": "language",
+        "text": "Write the final report in English.",
+        "version": 1,
+        "source": {
+          "id": "user-3",
+          "role": "user",
+          "content": "Write the final report in English.",
+          "sequence": 3,
+          "source_type": "instruction",
+          "registry_id": null,
+          "constraint_id": null,
+          "constraint_version": null
+        },
+        "span_start": 0,
+        "span_end": 34,
+        "task_id": null,
+        "created_revision": 3,
+        "status": "superseded",
+        "ended_revision": 4
+      },
+      {
+        "id": "language",
+        "text": "Write the final report in Spanish.",
+        "version": 2,
+        "source": {
+          "id": "user-5",
+          "role": "user",
+          "content": "Write the final report in Spanish.",
+          "sequence": 5,
+          "source_type": "instruction",
+          "registry_id": null,
+          "constraint_id": null,
+          "constraint_version": null
+        },
+        "span_start": 0,
+        "span_end": 34,
+        "task_id": null,
+        "created_revision": 4,
+        "status": "active",
+        "ended_revision": null
+      }
+    ]
+  },
+  "expected": {
+    "dataset": "missing",
+    "approval": "weakened",
+    "language": "contradicted"
+  },
+  "before_sha256": "7a1350cf3524b2bdbc4271c8854e08e0658c09d9f70e8e0e5ff54ae3b8356947",
+  "after_sha256": "6dc413a4cf728ea17cc176d48343628350d7b88e68b6347fb9883899a7fb70e3"
+}

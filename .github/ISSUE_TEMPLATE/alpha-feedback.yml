@@ -1,0 +1,37 @@
+name: Alpha feedback
+description: Report a compaction loss, false alarm, integration problem, or behavior after resume.
+title: "[Alpha] "
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Package and model versions
+      placeholder: compaction-check 0.2.0a1, jev-1.13.0, Python 3.11
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options:
+        - pin
+        - audit
+        - repair
+        - check CLI
+        - Installation or other
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior and actual outcome
+      description: Include whether the agent completed its task and what its tools did.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Share sanitized inputs or code, context size, and the resume status. Remove API keys and private conversation content.
+    validations:
+      required: true

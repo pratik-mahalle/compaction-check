@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "policy_version": "retention-v1",
+  "created_at": "2026-09-26T12:56:41.179692+00:00",
+  "complete": true,
+  "passed": true,
+  "exit_code": 0,
+  "scope": "constraint_retention",
+  "judge": "jev",
+  "requested_model": "jev-1.13.0",
+  "resolved_models": [
+    "jev-1.13.0"
+  ],
+  "min_confidence": 0.6,
+  "context_sha256": "547e21fb4b1b523b72c9e9f43a2e67b5546181e2729a9de438366b237b11e557",
+  "constraints_sha256": "8ced67251e470d9efb8f2c843b8e1209fd0d3f54edb361cf110bd0e7ed08f91b",
+  "summary": {
+    "active": 3,
+    "preserved": 3,
+    "missing": 0,
+    "weakened": 0,
+    "contradicted": 0,
+    "uncertain": 0,
+    "skipped": 1
+  },
+  "results": [
+    {
+      "id": "dataset",
+      "constraint": "Use only sales_2025.csv as the data source.",
+      "source": "user turn 1",
+      "active": true,
+      "evidence": {
+        "id": "p2",
+        "start_line": 2,
+        "end_line": 2,
+        "text": "The report must draw its data exclusively from sales_2025.csv.\n"
+      },
+      "confidence": 1.0,
+      "probabilities": {
+        "missing": 0.0,
+        "contradicted": 0.0,
+        "weakened": 0.0,
+        "preserved": 1.0,
+        "uncertain": 0.0
+      },
+      "raw_status": "preserved",
+      "evidence_confidence": 1.0,
+      "status": "preserved",
+      "reason": "Jev judged that the full requirement remains operative with equivalent meaning."
+    },
+    {
+      "id": "approval",
+      "constraint": "Ask the user for approval before deleting any file.",
+      "source": "user turn 2",
+      "active": true,
+      "evidence": {
+        "id": "p3",
+        "start_line": 3,
+        "end_line": 3,
+        "text": "Obtain the user's approval before removing any file.\n"
+      },
+      "confidence": 0.98,
+      "probabilities": {
+        "uncertain": 0.0,
+        "contradicted": 0.0,
+        "weakened": 0.02,
+        "preserved": 0.98,
+        "missing": 0.0
+      },
+      "raw_status": "preserved",
+      "evidence_confidence": 1.0,
+      "status": "preserved",
+      "reason": "Jev judged that the full requirement remains operative with equivalent meaning."
+    },
+    {
+      "id": "language",
+      "constraint": "Write the final report in Spanish.",
+      "source": "user turn 5",
+      "active": true,
+      "evidence": {
+        "id": "p4",
+        "start_line": 4,
+        "end_line": 4,
+        "text": "Deliver the final report in Spanish.\n"
+      },
+      "confidence": 0.99,
+      "probabilities": {
+        "uncertain": 0.0,
+        "weakened": 0.0,
+        "missing": 0.0,
+        "preserved": 1.0,
+        "contradicted": 0.0
+      },
+      "raw_status": "preserved",
+      "evidence_confidence": 1.0,
+      "status": "preserved",
+      "reason": "Jev judged that the full requirement remains operative with equivalent meaning."
+    },
+    {
+      "id": "old-language",
+      "constraint": "Write the final report in English.",
+      "source": "user turn 1; replaced at turn 5",
+      "active": false,
+      "evidence": null,
+      "confidence": null,
+      "probabilities": null,
+      "raw_status": null,
+      "evidence_confidence": null,
+      "status": "skipped",
+      "reason": "Explicitly inactive; excluded from retention checks."
+    }
+  ],
+  "calls": [
+    {
+      "constraint_id": "dataset",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1212,
+        "output_tokens": 127
+      }
+    },
+    {
+      "constraint_id": "approval",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1204,
+        "output_tokens": 127
+      }
+    },
+    {
+      "constraint_id": "language",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1198,
+        "output_tokens": 127
+      }
+    }
+  ]
+}
